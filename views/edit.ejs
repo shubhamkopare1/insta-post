@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    <style>
+           body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .img{
+            height: 26rem;
+    width: 26rem;
+      }
+       body{
+        display: flex;
+        justify-content: center;
+        background-color: #1c1e21;
+        color: white;
+        
+       }
+       .userName{
+        font-size: 1.5rem;
+        font-weight: 300;
+       }
+      button{
+        height: 2rem;
+    width: 9.86rem;;
+      }
+    
+      .btn{
+        height: 2rem;
+    width: 26rem;
+    background: #2874f0;
+    border: 1px solid #2874f0;
+    color: white;
+      }
+      #content{
+        width: 25.6rem;
+      }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <form method="POST" action="/post/<%=post.id %>/edited?_method=PATCH">
+            <p class="userName"><%= post.username %></p>
+            <div class="data">
+                <img class="img" src="<%= post.img %>" alt="" srcset="">
+                <br>
+                <div class="content">
+                <h3><%= post.username %> </h3>
+                <textarea name="content" id="content" cols="45" rows="1"> <%= post.content %></textarea>
+            </div>
+                <br>
+                <input class="btn" type="submit" value="Save">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

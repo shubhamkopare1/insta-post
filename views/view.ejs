@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .img{
+        height: 30rem;
+        width: 30rem;
+      }
+       body{
+        display: flex;
+    justify-content: center;
+    background-color: #1c1e21;
+    color: white;
+        
+       }
+       .userName{
+        font-size: 1.5rem;
+       }
+      button{
+        height: 2rem;
+    width: 9.86rem;;
+      }
+    </style>
+  
+</head>
+<body>
+    <div class="main">
+   
+          <p class="userName"><%= post.username %></p>
+          <div class="data" >
+            <img class="img" src="<%= post.img %>" alt="" srcset="">
+          <br>
+          
+          <p><span><%= post.username %></span>  : <%= post.content %></p>
+        </div>
+        <br>
+ 
+        </div>
+</body>
+</html>

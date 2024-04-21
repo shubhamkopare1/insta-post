@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+      .img{
+        height: 30rem;
+        width: 30rem;
+      }
+       body{
+        display: flex;
+    justify-content: center;
+    background-color: #1c1e21;
+    color: white;
+        
+       }
+       .userName{
+        font-size: 1.5rem;
+       }
+      button{
+        height: 2rem;
+    width: 9.9rem;
+    background: #2874f0;
+    color: white;
+    border: 1px solid #2874f0;
+    border-radius: 2px;
+      }
+      .btn{
+        position: fixed;
+    bottom: .2rem;
+    width: 30rem;
+    height: 3rem;
+      }
+      .last{
+        height: 3rem;
+      }
+       
+    </style>
+</head>
+<body>
+    <div class="main">
+    <% for(post of posts){ %>
+      <p class="userName"><%= post.username %></p>
+      <div class="data">
+        <img class="img" src="<%= post.img %>" alt="" srcset="">
+      <br>
+      <div style="display: flex; gap: 3px;">
+     <a href="http://localhost:8080/post/<%= post.id%>/edit"> <button>edit</button></a>
+      <a href="http://localhost:8080/post/<%= post.id %>"><button>view</button></a>
+      <form method="POST" action="/post/<%=post.id %>?_method=DELETE">
+   <button>delete</button> </form>
+  </div>
+      <p><span><%= post.username %></span>  : <%= post.content %></p>
+      
+    </div>
+    <br>
+   <% } %>
+   <div class="last">
+
+   </div>
+   <a href="http://localhost:8080/post/new"><button class="btn">post</button></a>
+    </div>
+   
+</body>
+</html>
